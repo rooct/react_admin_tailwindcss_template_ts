@@ -1,5 +1,5 @@
 import { Tooltip } from "@chakra-ui/tooltip";
-const TooltipHorizon = (props: {
+const TooltipUI = (props: {
   extra: string;
   trigger: JSX.Element;
   content: JSX.Element;
@@ -17,4 +17,4 @@ const TooltipHorizon = (props: {
   );
 };
 
-export default TooltipHorizon;
+export default TooltipUI;
