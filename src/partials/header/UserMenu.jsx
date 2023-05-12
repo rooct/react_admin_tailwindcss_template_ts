@@ -81,7 +81,7 @@ function UserMenu() {
             <li>
               <Link
                 className="font-medium text-sm text-indigo-500 hover:text-indigo-600 flex items-center py-1 px-3"
-                to="/"
+                to="/auth/signin"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
                 Sign Out

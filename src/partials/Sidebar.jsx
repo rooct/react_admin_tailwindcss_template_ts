@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { routes } from '@/routes'
 import SidebarLinkGroup from './SidebarLinkGroup';
-
+import FreeCard from "@/components/sidebarcard";
 
 
 
@@ -120,7 +120,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 routes.pages.map((item, key) => {
                   if (item.subs.length == 0) {
                     return (
-                      <li className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname === '/' || pathname.includes(item.name.toLowerCase()) && 'bg-slate-200'}`}>
+                      <li key={key} className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname === '/' || pathname.includes(item.name.toLowerCase()) && 'bg-slate-200'}`}>
                         <NavLink
                           end
                           to={item.path}
@@ -210,6 +210,9 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               }
             </ul>
           </div>
+          <div className="flex justify-center">
+        <FreeCard />
+      </div>
         </div>
 
         {/* Expand / collapse button */}
@@ -225,6 +228,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
           </div>
         </div>
       </div>
+      
     </div>
   );
 }

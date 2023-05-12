@@ -805,7 +805,7 @@ csstype@^3.0.2:
   resolved "https://registry.npmjs.org/csstype/-/csstype-3.1.2.tgz"
   integrity sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==
 
-debug@^4.1.0:
+debug@*, debug@^4.1.0:
   version "4.3.4"
   resolved "https://registry.npmjs.org/debug/-/debug-4.3.4.tgz"
   integrity sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==
@@ -1510,6 +1510,13 @@ util-deprecate@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz"
   integrity sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==
+
+variables@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmmirror.com/variables/-/variables-1.0.1.tgz#71b204e8ae5f72d319aa515002d44ae1ab91f929"
+  integrity sha512-la7jloDs2vt02t8jlc0bMR+c70z+Y7xicjQUQuqzEh9i1dMWn/uUnwSmUQcbIfqCCMLsn4zD2Ya4WY41CXCN3A==
+  dependencies:
+    debug "*"
 
 vite@^4.2.1:
   version "4.2.1"

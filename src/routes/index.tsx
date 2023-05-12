@@ -1,8 +1,15 @@
+import Calendar from "@/pages/Calendar";
+import SignIn from "@/pages/auth/SignIn";
+import Accordion from "@/pages/component/Accordion";
+
+import { lazy } from "react";
+
 export const routes = {
   pages: [
     {
       path: '/',
       name: 'Main',
+      component: lazy(() => import('@/pages/dashboard')),
       icon: <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
         <path
           d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.617 0 12 0z"
@@ -19,6 +26,7 @@ export const routes = {
     {
       path: '/nft-marketplace',
       name: 'NFT Marketplace',
+      component: lazy(()=> import('@/pages/marketplace')),
       icon: <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
         <path
           d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.617 0 12 0z"
@@ -35,6 +43,7 @@ export const routes = {
     {
       path: '/profile',
       name: 'Profile',
+      component: lazy(()=> import('@/pages/profile')),
       icon: <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
         <path
           d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.617 0 12 0z"
@@ -49,21 +58,9 @@ export const routes = {
       subs: []
     },
     {
-      path: '/inbox',
-      name: 'Inbox',
-      icon: <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
-        <path
-          d="M16 13v4H8v-4H0l3-9h18l3 9h-8Z"
-        />
-        <path
-          d="m23.72 12 .229.686A.984.984 0 0 1 24 13v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1v-8c0-.107.017-.213.051-.314L.28 12H8v4h8v-4H23.72ZM13 0v7h3l-4 5-4-5h3V0h2Z"
-        />
-      </svg>,
-      subs: []
-    },
-    {
       path: '/calendar',
       name: 'Calendar',
+      component: lazy(()=> import('@/pages/Calendar')),
       icon: <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
         <path d="M1 3h22v20H1z" />
         <path
@@ -71,115 +68,6 @@ export const routes = {
         />
       </svg>,
       subs: []
-    },
-    {
-      path: '/campaigns',
-      name: 'Campaigns',
-      icon: <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
-        <path
-          d="M20 7a.75.75 0 01-.75-.75 1.5 1.5 0 00-1.5-1.5.75.75 0 110-1.5 1.5 1.5 0 001.5-1.5.75.75 0 111.5 0 1.5 1.5 0 001.5 1.5.75.75 0 110 1.5 1.5 1.5 0 00-1.5 1.5A.75.75 0 0120 7zM4 23a.75.75 0 01-.75-.75 1.5 1.5 0 00-1.5-1.5.75.75 0 110-1.5 1.5 1.5 0 001.5-1.5.75.75 0 111.5 0 1.5 1.5 0 001.5 1.5.75.75 0 110 1.5 1.5 1.5 0 00-1.5 1.5A.75.75 0 014 23z"
-        />
-        <path
-          d="M17 23a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 010-2 4 4 0 004-4 1 1 0 012 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1zM7 13a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 110-2 4 4 0 004-4 1 1 0 112 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1z"
-        />
-      </svg>,
-      subs: []
-    },
-    {
-      path: '/settings',
-      name: 'Settings',
-      icon: <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
-        <path
-          d="M19.714 14.7l-7.007 7.007-1.414-1.414 7.007-7.007c-.195-.4-.298-.84-.3-1.286a3 3 0 113 3 2.969 2.969 0 01-1.286-.3z"
-        />
-        <path
-          d="M10.714 18.3c.4-.195.84-.298 1.286-.3a3 3 0 11-3 3c.002-.446.105-.885.3-1.286l-6.007-6.007 1.414-1.414 6.007 6.007z"
-        />
-        <path
-          d="M5.7 10.714c.195.4.298.84.3 1.286a3 3 0 11-3-3c.446.002.885.105 1.286.3l7.007-7.007 1.414 1.414L5.7 10.714z"
-        />
-        <path
-          d="M19.707 9.292a3.012 3.012 0 00-1.415 1.415L13.286 5.7c-.4.195-.84.298-1.286.3a3 3 0 113-3 2.969 2.969 0 01-.3 1.286l5.007 5.006z"
-        />
-      </svg>,
-      subs: [
-        {
-          path: '/settings/account',
-          name: 'My Account'
-        },
-        {
-          path: '/settings/notifications',
-          name: 'My Notifications'
-        },
-        {
-          path: '/settings/apps',
-          name: 'Connected Apps'
-        },
-        {
-          path: '/settings/plans',
-          name: 'Plans'
-        },
-        {
-          path: '/settings/billing',
-          name: 'Billing & Invoices'
-        },
-        {
-          path: '/settings/feedback',
-          name: 'Give Feedback'
-        },
-      ]
-    },
-    {
-      path: '/utility',
-      name: 'Utility',
-      icon: <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
-        <circle
-          cx="18.5"
-          cy="5.5"
-          r="4.5"
-        />
-        <circle
-          cx="5.5"
-          cy="5.5"
-          r="4.5"
-        />
-        <circle
-          cx="18.5"
-          cy="18.5"
-          r="4.5"
-        />
-        <circle
-          cx="5.5"
-          cy="18.5"
-          r="4.5"
-        />
-      </svg>,
-      subs: [
-        {
-          path: '/utility/changelog',
-          name: 'Changelog'
-        },
-        {
-          path: '/utility/roadmap',
-          name: 'Roadmap'
-        },
-        {
-          path: '/utility/faqs',
-          name: 'FAQs'
-        },
-        {
-          path: '/utility/empty-state',
-          name: 'Empty State'
-        },
-        {
-          path: '/utility/404',
-          name: '404n'
-        },
-        {
-          path: '/utility/knowledge-base',
-          name: 'Knowledge Base'
-        },
-      ]
     },
     {
       path: '#',
@@ -190,16 +78,19 @@ export const routes = {
       </svg>,
       subs: [
         {
-          path: '/signin',
-          name: 'Sign in'
+          path: '/auth/signin',
+          name: 'Sign in',
+          component: lazy(()=>import('@/pages/auth/SignIn'))
         },
         {
-          path: '/signup',
-          name: 'Sign up'
+          path: '/auth/signup',
+          name: 'Sign up',
+          component: lazy(()=>import('@/pages/auth/SignIn'))
         },
         {
-          path: '/reset-password',
-          name: 'Reset Password'
+          path: '/auth/reset-password',
+          name: 'Reset Password',
+          component: lazy(()=>import('@/pages/auth/SignIn'))
         },
       ]
     },
@@ -222,60 +113,150 @@ export const routes = {
       subs: [
         {
           path: '/component/accordion',
-          name: 'Accordion'
+          name: 'Accordion',
+          component: lazy(() => import('@/pages/component/Accordion'))
         },
         {
           path: '/component/alert',
-          name: 'AlertBanner'
+          name: 'AlertBanner',
+          component: lazy(() => import('@/pages/component/AlertBanner'))
         },
         {
           path: '/component/avatar',
-          name: 'Avatar'
+          name: 'Avatar',
+          component: lazy(() => import('@/pages/component/Avatar'))
         },
         {
           path: '/component/badge',
-          name: 'Badge'
+          name: 'Badge',
+          component: lazy(() => import('@/pages/component/Badge'))
         },
         {
           path: '/component/breadcrumb',
-          name: 'Breadcrumb'
+          name: 'Breadcrumb',
+          component: lazy(() => import('@/pages/component/Breadcrumb'))
         },
         {
           path: '/component/button',
-          name: 'Button'
+          name: 'Button',
+          component: lazy(() => import('@/pages/component/Button'))
+        },
+        {
+          path: '/component/banner',
+          name: 'Banner',
+          component: lazy(() => import('@/pages/component/Banner'))
+        },
+        {
+          path: '/component/category',
+          name: 'Category',
+          component: lazy(() => import('@/pages/component/Category'))
+        },
+        {
+          path: '/component/center',
+          name: 'Center',
+          component: lazy(() => import('@/pages/component/Center'))
         },
         {
           path: '/component/dropdown',
-          name: 'Dropdown'
+          name: 'Dropdown',
+          component: lazy(() => import('@/pages/component/Dropdown'))
+        },
+        {
+          path: '/component/description',
+          name: 'Description',
+          component: lazy(() => import('@/pages/component/description'))
+        },
+        {
+          path: '/component/detail',
+          name: 'Detail',
+          component: lazy(() => import('@/pages/component/Detail'))
         },
         {
           path: '/component/icons',
-          name: 'Icons'
+          name: 'Icons',
+          component: lazy(() => import('@/pages/component/Icons'))
         },
         {
           path: '/component/form',
-          name: 'InputForm'
+          name: 'InputForm',
+          component: lazy(() => import('@/pages/component/InputForm'))
+        }, 
+        {
+          path: '/component/feature',
+          name: 'Feature',
+          component: lazy(() => import('@/pages/component/Feature'))
+        },
+        {
+          path: '/component/list',
+          name: 'List',
+          component: lazy(() => import('@/pages/component/List'))
         },
         {
           path: '/component/modal',
-          name: 'Modal'
+          name: 'Modal',
+          component: lazy(() => import('@/pages/component/Modal'))
+        },
+        {
+          path: '/component/navbar',
+          name: 'Navbar',
+          component: lazy(() => import('@/pages/component/Navbar'))
+        },
+        {
+          path: '/component/notfound',
+          name: 'Notfound',
+          component: lazy(() => import('@/pages/component/NotFound'))
+        },
+        {
+          path: '/component/navigation',
+          name: 'Navigation',
+          component: lazy(() => import('@/pages/component/Navigation'))
         },
         {
           path: '/component/pagination',
-          name: 'Pagination'
+          name: 'Pagination',
+          component: lazy(() => import('@/pages/component/Pagination'))
+        },
+        {
+          path: '/component/pagehead',
+          name: 'PageHead',
+          component: lazy(() => import('@/pages/component/PageHead'))
+        },
+        {
+          path: '/component/slideovers',
+          name: 'SlideOvers',
+          component: lazy(() => import('@/pages/component/SlideOvers'))
+        },
+        {
+          path: '/component/select',
+          name: 'Select',
+          component: lazy(() => import('@/pages/component/Select'))
+        },
+        {
+          path: '/component/section',
+          name: 'Section',
+          component: lazy(() => import('@/pages/component/Section'))
+        },
+        {
+          path: '/component/state',
+          name: 'State',
+          component: lazy(() => import('@/pages/component/State'))
         },
         {
           path: '/component/tabs',
-          name: 'Tabs'
+          name: 'Tabs',
+          component: lazy(() => import('@/pages/component/Tabs'))
         },
         {
           path: '/component/tables',
-          name: 'Tables'
+          name: 'Tables',
+          component: lazy(() => import('@/pages/component/Tables'))
         },
         {
           path: '/component/tooltip',
-          name: 'Tooltip'
-        }
+          name: 'Tooltip',
+          component: lazy(() => import('@/pages/component/Tooltip'))
+        },
+        
       ]
     }
   ],
